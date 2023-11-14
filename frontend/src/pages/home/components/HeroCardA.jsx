@@ -2,8 +2,7 @@
 
 import { Link } from "react-router-dom";
 
-
-const HeroCardA = ({image}) => {
+const HeroCardA = ({ image }) => {
   return (
     <div
       style={{ "--image-url": `url(${image})` }}
@@ -15,12 +14,15 @@ const HeroCardA = ({image}) => {
           We are Hexashop
         </div>
         <p className="">Lorem ipsum dummy text</p>
-        <Link to="/" c className="border-2 p-1 hover:border-blue-500 rounded">
-          Sign up
-        </Link> 
+        <Link
+          to="/"
+          className="border border-gray-500 rounded-md p-2 text-xl px-2 animate-blink-blue-pink hover:border-blue-500 hover:bg-blue-500 hover:text-white bg-black/75 text-white hover:scale-110 transition-all duration-700"
+        >
+          Sign In
+        </Link>
       </div>
     </div>
   );
-}
+};
 
-export default HeroCardA
+export default HeroCardA;

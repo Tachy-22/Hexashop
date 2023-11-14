@@ -1,3 +1,92 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.heroDropShadow {
+      box-shadow: 0px 10px 15px 0px rgba(43, 39, 39, 0.33);
+      -webkit-box-shadow: 0px 10px 15px 0px rgba(43, 39, 39, 0.33);
+      -moz-box-shadow: 0px 10px 15px 0px rgba(43, 39, 39, 0.33);
+}
+
+:root {
+      font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+      /* color-scheme: light dark; */
+}
+
+
+:focus-visible {
+      outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Hide the default scrollbar */
+/* ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+} */
+
+::-webkit-scrollbar {
+      width: 20px;
+}
+
+::-webkit-scrollbar-track {
+      background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+      background-color: #d6dee1;
+      border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+      background-color: #d6dee1;
+      border-radius: 20px;
+      border: 6px solid transparent;
+      background-clip: content-box;
+}
+
+.carousel::-webkit-scrollbar {
+      width: 20px;
+}
+
+.carousel::-webkit-scrollbar-track {
+      background-color: transparent;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+      background-color: #393838;
+      border-radius: 20px;
+      border: 6px solid transparent;
+      background-clip: content-box;
+
+}
+
+/* For Mozilla Firefox */
+/* @-moz-document url-prefix() {
+      .carousel {
+            scrollbar-width: thin;
+
+          
+            scrollbar-color: #595757 transparent;
+          
+      }
+}
+
+@keyframes blink-blue-pink {
+
+      0%,
+      100% {
+            background: rgba(0, 0, 0, 0.741);
+            color: white;
+           
+      }
+
+      50% {
+            background: rgb(77, 138, 230);
+            color: white;
+            
+      }
+}
+
+.animate-blink-blue-pink {
+      animation: blink-blue-pink 5s infinite;
+ } */
