@@ -27,7 +27,7 @@ const NewsAndUpdates = () => {
   ];
 
   return (
-    <div className=" py-[6rem] px-2 ">
+    <div className=" md:py-[6rem] py-[2rem] px-2 ">
       <div className="container mx-auto flex flex-col justify-center  ">
         <h2 className="text-3xl font-bold mb-4">Trending News and Updates</h2>
         <p className="text-gray-600 pb-4 md:w-[70%]">

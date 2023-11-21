@@ -7,14 +7,14 @@ const renderStars = (starNumber) => {
   const starsArray = [];
 
   for (let i = 0; i < filledStars; i++) {
-    starsArray.push(<AiFillStar key={i} className="text-yellow-500 text-sm xl:text-xl" />);
+    starsArray.push(<AiFillStar key={i} className="text-yellow-500 text-sm xl:text-md" />);
   }
 
   for (let i = 0; i < emptyStars; i++) {
     starsArray.push(
       <AiOutlineStar
         key={filledStars + i}
-        className="text-yellow-500 text-sm xl:text-xl"
+        className="text-yellow-500 text-sm xl:text-md"
       />
     );
   }
@@ -24,9 +24,9 @@ const renderStars = (starNumber) => {
 
 const StarRating = ({ starNumber }) => {
   return (
-    <div>
+    <div className=" flex justify-centeritems-center">
       {" "}
-      <span className="flex justify-between flow">{renderStars(starNumber)}</span>
+      <span className="flex justify-between w-fit items-center">{renderStars(starNumber)}</span>
     </div>
   );
 };

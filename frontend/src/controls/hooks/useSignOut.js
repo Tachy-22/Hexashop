@@ -11,19 +11,25 @@ const useSignOut = () => {
   useEffect(() => {
     try {
       {
-        sessionStorage.removeItem("user");
-        sessionStorage.removeItem("userAccessToken");
-        dispatch(initiateCurrentUser(null));
-        isSigningOut && console.log("Signing out");
+        const signingOut = () => {
+          sessionStorage.removeItem("user");
+          sessionStorage.removeItem("userAccessToken");
+          dispatch(initiateCurrentUser(null));
+          isSigningOut && console.log("Signing out");
 
-        signOut(auth)
-          .then(() => {
-            console.error("Sign out successful");
-          })
-          .catch((error) => {
-            console.error("error occured while attempting to sign out:", error);
-          });
-        setIsSigningOut(false);
+          signOut(auth)
+            .then(() => {
+              console.error("Sign out successful");
+            })
+            .catch((error) => {
+              console.error(
+                "error occured while attempting to sign out:",
+                error
+              );
+            });
+          setIsSigningOut(false);
+        };
+        isSigningOut && signingOut();
       }
     } catch (error) {
       console.error("error occured while attempting to sign out:", error);

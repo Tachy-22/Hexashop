@@ -15,9 +15,11 @@ const useSignInWithGoogle = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+
   useEffect(() => {
     try {
       console.log("tried !");
+
       isLoggingIn &&
         signInWithPopup(auth, googleProvider)
           .then((result) => {
@@ -30,11 +32,14 @@ const useSignInWithGoogle = () => {
             const logedInUser = result.user.providerData[0];
             // IdP data available using getAdditionalUserInfo(result)
             // ...
+            dispatch(initiateCurrentUser(logedInUser));
+            console.log("shouldAddUser");
 
             console.log("userand user Token :", logedInUser, token);
+          
             sessionStorage.setItem("user", JSON.stringify(logedInUser));
             sessionStorage.setItem("userAccessToken", result.user.accessToken);
-            dispatch(initiateCurrentUser(logedInUser));
+
             dispatch(setModalVisibility(false));
             setIsLoggingIn(false);
             navigate("/");

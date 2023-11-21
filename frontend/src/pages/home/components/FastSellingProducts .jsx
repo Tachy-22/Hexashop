@@ -5,66 +5,7 @@ import ProductCard from "../../../components/ProductCard";
 import { client } from "../../../../sanity-config";
 
 const FastSellingProducts = () => {
-  // Assuming you have an array of fast-selling products
-  // const fastSellingProducts = [
-  //   {
-  //     image: DummyImage,
-  //     price: "$100",
-  //     isFavorite: false,
-  //     isInCart: false,
-  //     stars: "5",
-  //     name: "addidas classics",
-  //   },
-  //   {
-  //     image: DummyImage,
-  //     price: "$100",
-  //     isFavorite: false,
-  //     isInCart: false,
-  //     stars: "5",
-  //     name: "addidas classics",
-  //   },
-  //   {
-  //     image: DummyImage,
-  //     price: "$100",
-  //     isFavorite: false,
-  //     isInCart: false,
-  //     stars: "5",
-  //     name: "addidas classics",
-  //   },
-  //   {
-  //     image: DummyImage,
-  //     price: "$100",
-  //     isFavorite: false,
-  //     isInCart: false,
-  //     stars: "5",
-  //     name: "addidas classics",
-  //   },
-  //   {
-  //     image: DummyImage,
-  //     price: "$100",
-  //     isFavorite: false,
-  //     isInCart: false,
-  //     stars: "5",
-  //     name: "addidas classics",
-  //   },
-  //   {
-  //     image: DummyImage,
-  //     price: "$100",
-  //     isFavorite: false,
-  //     isInCart: false,
-  //     stars: "5",
-  //     name: "addidas classics",
-  //   },
-  //   {
-  //     image: DummyImage,
-  //     price: "$100",
-  //     isFavorite: false,
-  //     isInCart: false,
-  //     stars: "5",
-  //     name: "addidas classics",
-  //   },
-  // ];
-
+ 
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -85,11 +26,11 @@ const FastSellingProducts = () => {
   }, []);
 
   return (
-    <div className="  xl:px-[6rem] md:px-[2rem] px-1 xl:py-[3rem] md:py-[2rem] py-1 md:gap-[1rem] gap-2 bg-white flex h-fit  border-red-500 heroDropShadow flex-col ">
+    <div className="  xl:px-[6rem] md:px-[2rem] px-4 xl:py-[3rem] md:py-[2rem] py-6 md:gap-[1rem] gap-2 bg-white flex h-fit  border-red-500 heroDropShadow flex-col  ">
       <h2 className="text-3xl font-bold mb-4">Fast Selling Products</h2>
-      <div className="overflow-x-scroll  border-red-400">
+      <div className="overflow-x-auto carousel border-red-400">
         <div
-          className="flex carousel w-fit justify-between   gap-4 pb-4 border-green-400"
+          className="flex  w-fit justify-between   gap-4 pb-4 border-green-400"
           id="carousel"
         >
           {data &&
@@ -98,7 +39,7 @@ const FastSellingProducts = () => {
                 <ProductCard
                   key={index}
                   product={product}
-                  minWidth={"xl:min-w-[20rem]"}
+                  style={`xl:w-[20rem] w-[15rem] `}
                 />
               );
             })}

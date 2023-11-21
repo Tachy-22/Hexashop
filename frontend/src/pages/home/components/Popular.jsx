@@ -23,8 +23,11 @@ const PopularListItem = ({ item }) => {
 const Popular = () => {
   return (
     <div className="xl:p-[6rem] md:p-[4rem] p-4">
-      <h2 className="my-4 text-3xl font-bold"> Popular right now</h2>
-      <div className="lg:grid-cols-3 gap-[5rem] grid-cols-1 grid ">
+      <h2 className="my-4 text-3xl font-bold text-gray-600">
+        {" "}
+        Popular right now
+      </h2>
+      <div className="lg:grid-cols-3 gap-1 md:gap-[5rem] grid-cols-1 grid ">
         {pupularUiData.map((item, i) => {
           return (
             <Link to={`${item.path}`} key={i}>

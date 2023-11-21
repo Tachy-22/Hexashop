@@ -1,76 +1,46 @@
-import { useState } from "react";
-import dummyImage from "../../../assets/LoafersUiBgImg.jpg";
-import { RiCloseLine } from "react-icons/ri";
-
 import QuantityCounter from "./QuantityCounter";
+import { useDispatch, useSelector } from "react-redux";
+import { setMyCart } from "../../../react-redux/appSlice";
+import { Suspense, useCallback, useMemo } from "react";
+import Loader from "../../../components/Loader";
+import useRemoveFromCart from "../../../controls/hooks/useRemoveFromCart";
+import useProductDetailPageNavigation from "../../../controls/hooks/useProductDetailPageNavigation";
+import useCartQuantityUpdater from "../controls/hooks/useCartQuantityUpdater";
+import PurchaseSummary from "./PurchaseSummary";
 
 const ProductTable = () => {
-  const [products, setProducts] = useState([
-    {
-      image: dummyImage,
-      name: "name 1",
-      price: "100",
-      qty: " 1",
-      total: "100",
+  const dispatch = useDispatch();
+  const [removeFromCart] = useRemoveFromCart();
+  const updateQuantityAndTotal = useCartQuantityUpdater();
+  const navigateToProductDetailPage = useProductDetailPageNavigation();
+
+  const { myCart } = useSelector((state) => state.app);
+  const headertitles = useMemo(
+    () => ["item", "name", "price", "qty", "total"],
+    []
+  );
+
+  const removeProductFromTable = (row) => {
+    const updatedRows = myCart?.filter((product) => product.data !== row);
+    dispatch(setMyCart(updatedRows));
+    removeFromCart(row);
+  };
+
+  const handleProductDetailNavigation = useCallback(
+    (row) => {
+      const product = row.data;
+      const imageUrl = row.data.imageUrl;
+      navigateToProductDetailPage(product, imageUrl);
     },
-    {
-      image: dummyImage,
-      name: "name 2",
-      price: " 200",
-      qty: "2",
-      total: "400",
-    },
-    {
-      image: dummyImage,
-      name: "name 3",
-      price: " 300",
-      qty: " 3",
-      total: "900",
-    },
-  ]);
+    [navigateToProductDetailPage]
+  );
 
-  const addRow = () => {
-    const newProduct = {
-      image: dummyImage,
-      name: "name ",
-      price: "100",
-      qty: " 1",
-      total: " 100",
-    };
-    setProducts([...products, newProduct]);
-  };
+  const salesCharge = useMemo(() => 0, []);
+  const shippingCharge = useMemo(() => 0, []);
 
-  const headertitles = ["item", "name", "price", "qty", "total"];
-
-  const removeProduct = (row) => {
-    const updatedRows = products.filter((product) => product !== row);
-    setProducts(updatedRows);
-  };
-
-  const updateQuantityAndTotal = (index, newQty) => {
-    const updatedProducts = [...products];
-    updatedProducts[index].qty = newQty;
-    updatedProducts[index].total =
-      newQty * parseInt(updatedProducts[index].price); // Assuming price is a number
-    setProducts(updatedProducts);
-  };
-
-  const calculateTotal = () => {
-    let total = 0;
-    products.forEach((product) => {
-      total += parseInt(product.total);
-    });
-    return total;
-  };
-
-  console.log("current Product Data :", products);
-  const salesCharge = 0;
-  const shippingCharge = 0;
   return (
-    <div>
-      <button onClick={addRow}>Add Row +</button>
-
-      <table className="w-full">
+    <>
+      <table className="w-full h-max">
         <thead className=" border-green-300 bg-secondary px-3 py-[3rem] ">
           <tr>
             {headertitles.map((title, index) => {
@@ -85,62 +55,67 @@ const ProductTable = () => {
             })}
           </tr>
         </thead>
-        <tbody className="w-full ">
-          {products.map((row, index) => (
-            <tr key={index} className="border-b border-gray-300 ">
-              <td className=" p-4">
-                <img
-                  src={row.image}
-                  alt="product image"
-                  className="h-[4rem] min-w-[3rem] max-h-[3rem] w-[4rem]"
-                />
-              </td>
-              <td className=" p-4 cursor-pointer">{row.name}</td>
-              <td className=" p-4 cursor-pointer"> $ {row.price}</td>
-              <td className="p-4 h-full border-gray-950 grid-cols-2">
-                <div className="flex ">
-                  <div>{row.qty}</div>
-                  <QuantityCounter
-                    onChange={(newQty) => updateQuantityAndTotal(index, newQty)}
-                    qty={parseInt(row.qty)}
+        <Suspense fallback={<Loader />}>
+          <tbody className="w-full capitalize">
+            {myCart?.map((row, index) => (
+              <tr key={index} className="border-b border-gray-300 ">
+                <td className="  lg:p-4 p-1 flex justify-center items-center h-full">
+                  <img
+                    onClick={() => {
+                      handleProductDetailNavigation(row);
+                    }}
+                    src={row.data.imageUrl}
+                    alt="product image"
+                    className="h-[4rem] min-w-[4rem] max-h-[5rem] w-[5rem] hover:border-yellow-300 hover:border"
                   />
-                </div>
-              </td>
-              <td className="p-4 h-full border-gray-950 grid-cols-2">
-                <div className="flex justify-between">
-                  <div className=" cursor-pointer border-black max-w-[5rem] w-[5rem] text-ellipsis text-red-500">
-                    $ {row.total}
+                </td>
+                <td
+                  onClick={() => {
+                    handleProductDetailNavigation(row);
+                  }}
+                  className=" lg:p-4 p-2 cursor-pointer uppercase text-[0.72rem] hover:underline underline-offset-4 lg:w-fit w-[20%]  border-red-500  lg:text-base"
+                >
+                  {row.data.label}
+                </td>
+                <td className=" p-4 "> ${row.data.price}</td>
+                <td className="p-4 h-full border-gray-950 grid-cols-2">
+                  <div className="flex justify-between items-center ">
+                    <div>{row.data.qty}</div>
+                    <QuantityCounter
+                      onChange={(newQty) =>
+                        updateQuantityAndTotal(index, newQty)
+                      }
+                      qty={parseInt(row.data.qty)}
+                      product={row.data}
+                    />
                   </div>
-                  <button onClick={() => removeProduct(row)}>
-                    <RiCloseLine className="text-xl" />
-                  </button>
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+                </td>
+                <td className="p-4 h-full border-gray-950 grid-cols-2">
+                  <div className="flex justify-between gap-[1rem]">
+                    <div className=" border-black max-w-[5rem]  text-ellipsis text-red-500 text-center flex items-center  ">
+                      ${row.data.total}
+                    </div>
+                    <button
+                      className="flex justify-between items-center gap-2 "
+                      onClick={() => removeProductFromTable(row.data)}
+                    >
+                      <div className="hover:bg-red-400 bg-red-500 text-white p-2 py-1 rounded-md lg:text-base text-sm">
+                        {" "}
+                        Remove Item
+                      </div>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Suspense>
       </table>
-      <div className="flex w-full flex-col items-end gap-3 border-red-500 p-4 py-6 text-gray-800 ">
-        <div className="  border-red-500 flex w-fit gap-[1.5rem]">
-          <div className="">Sub Total</div>
-          <div className="font-bold ">$ {calculateTotal()}</div>
-        </div>
-        <div className="  border-red-500 flex w-fit gap-[1.5rem]">
-          <div className="">Shipping Charge</div>
-          <div>$ {shippingCharge}</div>
-        </div>
-        <div className="  border-red-500 flex w-fit gap-[1.5rem]">
-          <div className="">Sales Charge</div>
-          <div>$ {salesCharge}</div>
-        </div>
-        <div className=" text-md font- border-red-500 flex w-fit gap-[1.5rem]">
-          <div className="">Total Amolunt</div>
-          <div className="font-bold  text-red-500">
-            $ {calculateTotal() + shippingCharge + salesCharge}
-          </div>
-        </div>
-      </div>
-    </div>
+      <PurchaseSummary
+        salesCharge={salesCharge}
+        shippingCharge={shippingCharge}
+      />
+    </>
   );
 };
 

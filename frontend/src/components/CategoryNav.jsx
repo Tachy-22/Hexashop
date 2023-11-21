@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const CategoryNav = ({ categoryNavData }) => {
   return (
-    <div className="flex text-gray-600 capitalize gap-[2rem]  border-b  h-full overflow-x-auto carousel border-gray-400 w-full py-[1.2rem] items-end overflow-clip ">
+    <div className="flex text-gray-600 capitalize gap-[2rem]  border-b  h-full overflow-x-auto mb- carousel border-gray-400 w-full py-[1.2rem] items-end overflow-clip ">
       {categoryNavData.map((categoryNav, index) => {
         return (
           <div key={index} className="w-full h-full">

@@ -30,8 +30,8 @@ const ExploreUiData = [
 
 const ExploreUi = () => {
   return (
-    <div className="lg:grid lg:grid-cols-2 flex flex-col gap-[3rem] h-fit heroDropShadow bg-white herodropShadpw  py-[6rem] xl:px-[5rem] l p-[2rem] ">
-      <div className="flex flex-col h-fit justify-start items-start my-auto -green-400 gap-4">
+    <div className="lg:grid lg:grid-cols-2 flex flex-col gap-[3rem] h-fit heroDropShadow bg-white herodropShadpw py-[2rem] md:py-[6rem] xl:px-[5rem] l p-[1rem] ">
+      <div className="flex flex-col h-fit justify-start items-start md:my-auto -green-400 gap-4">
         <h2 className="lg:text-4xl text-2xl font-bold">Explore Our Products</h2>
         <p className=" flex flex-col gap-2">
           <span className="">

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-//import DummyImage from "../../../assets/menUiBgImg.jpg";
-
+import Loader from "../../../components/Loader";
 import ProductCard from "../../../components/ProductCard";
 import { client } from "../../../../sanity-config";
 
@@ -25,7 +24,7 @@ const LatestUi = () => {
   }, []);
 
   return (
-    <div className=" flex flex-col md:gap-[3.5rem] gap-4 xl:px-[6rem] md:p-[4rem] p-2 py-4">
+    <div className=" flex flex-col md:gap-[3.5rem] gap-4 xl:px-[6rem] md:p-[2rem] p-2 py-4">
       {" "}
       {data &&
         data.map((category, index) => {
@@ -46,9 +45,8 @@ const LatestUi = () => {
                       <ProductCard
                         key={index}
                         product={product}
-                        style={
-                          "xl:min-w-[20rem] md:min-w-[17rem] min-w-[10rem]"
-                        }
+                        style={`xl:w-[20rem] w-[15rem] `}
+                        categoryData={category.products}
                       />
                     );
                   })}
@@ -57,6 +55,7 @@ const LatestUi = () => {
             </div>
           );
         })}
+      {!data && <Loader />}
     </div>
   );
 };

@@ -1,8 +1,8 @@
+import CategoryProductDisplay from "../../../components/CategoryProductDisplay";
+
 
 const Trousers = () => {
-  return (
-    <div>Trousers</div>
-  )
-}
+  return <CategoryProductDisplay searchValue="Trousers" />;
+};
 
-export default Trousers
+export default Trousers;

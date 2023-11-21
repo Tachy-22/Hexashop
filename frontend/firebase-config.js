@@ -5,22 +5,30 @@ import { getAuth } from "firebase/auth";
 
 import { GoogleAuthProvider } from "firebase/auth";
 
+import { getFirestore } from "firebase/firestore";
+
+import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCkBzu4z4XYGErMD0hkqghBO-Zj_EzQe-A",
-  authDomain: "hexashop-e5ec4.firebaseapp.com",
-  projectId: "hexashop-e5ec4",
-  storageBucket: "hexashop-e5ec4.appspot.com",
-  messagingSenderId: "537149340785",
-  appId: "1:537149340785:web:1011fb672b89bd76022fd0",
+  apiKey: "AIzaSyCw8fjvct7X8ZhfcH1JtrYe1WsJ-dnArDk",
+  authDomain: "hexashop-6f362.firebaseapp.com",
+  projectId: "hexashop-6f362",
+  storageBucket: "hexashop-6f362.appspot.com",
+  messagingSenderId: "970281532207",
+  appId: "1:970281532207:web:a0a3037e8a171072dc3fda",
+  measurementId: "G-MNSPY61YBP",
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+export const analytics = getAnalytics(app);
 export const storage = getStorage(app);
 export const auth = getAuth();
+export const db = getFirestore(app);
+
 
 export const googleProvider = new GoogleAuthProvider();

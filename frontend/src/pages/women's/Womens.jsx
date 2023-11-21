@@ -1,8 +1,19 @@
+import { Outlet } from "react-router-dom";
+import CategoryHeader from "../../components/CategoryHeader";
+import { womenNavCategoryData } from "../../localDb/categoryNavigation";
 
 const Womens = () => {
   return (
-    <div>Womens</div>
-  )
+    <div className=" flex md:px-[10%] px-[1rem] py-[2rem] flex-col gap-4 w-full ">
+      <CategoryHeader categoryNavData={womenNavCategoryData} /> 
+      <section
+        className=" py-[1rem] border-red-500 mx-auto w-full"
+        id="product-grid"
+      >
+        <Outlet />
+      </section>
+    </div>
+  );
 }
 
 export default Womens
