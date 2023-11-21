@@ -1,5 +1,5 @@
 import WomenUiBgImg from "../../../assets/womenUiBgImg.jpg";
-import MenUiBgImg from "../../../assets/MenUiBgImg.jpg";
+import MenUiBgImg from "../../../assets/menUiBgImg.jpg";
 import kidsUiBgImg from "../../../assets/kidsUiBgImg.jpg";
 import accesoriesUiBgImg from "../../../assets/accesoriesUiBgImg.jpg";
 import signUpUiBgImg from "../../../assets/signUpUiBgImg.jpg";
@@ -36,7 +36,6 @@ const categoryUiData = [
     uiBgImg: accesoriesUiBgImg,
   },
 ];
-
 
 const Hero = () => {
   return (
