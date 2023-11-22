@@ -5,34 +5,35 @@ import accesoriesUiBgImg from "../../../assets/accesoriesUiBgImg.jpg";
 import signUpUiBgImg from "../../../assets/signUpUiBgImg.jpg";
 import HeroCardA from "./HeroCardA";
 import HeroCardB from "./HeroCardB";
+import { accessoriesPath, kidsPath, mensPath, womensPath } from "../../../routing/paths";
 
 const categoryUiData = [
   {
     cardUiName: "women",
     cardDescriptionText: "Chic Styles Await",
     cardDescriptionPrompt: "Discover more",
-    path: "/women's",
+    path: womensPath,
     uiBgImg: WomenUiBgImg,
   },
   {
     cardUiName: "men",
     cardDescriptionText: "Elevate Your Wardrobe",
     cardDescriptionPrompt: "Discover more",
-    path: "/men's",
+    path: mensPath,
     uiBgImg: MenUiBgImg,
   },
   {
     cardUiName: "kids",
     cardDescriptionText: "Adorable Kids Fashion",
     cardDescriptionPrompt: "Discover more",
-    path: "/kid's",
+    path: kidsPath,
     uiBgImg: kidsUiBgImg,
   },
   {
     cardUiName: "accesories",
     cardDescriptionText: "Complete Your Look",
     cardDescriptionPrompt: "Discover more",
-    path: "/accesories",
+    path: accessoriesPath,
     uiBgImg: accesoriesUiBgImg,
   },
 ];

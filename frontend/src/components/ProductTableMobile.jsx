@@ -43,6 +43,9 @@ const ProductTableMobile = () => {
         >
           <div className=" p-1 flex justify-center items-center h-full  ">
             <img
+              onClick={() => {
+                handleProductDetailNavigation(row);
+              }}
               src={row.data.imageUrl}
               alt="product image"
               className="min-w-[3rem] w-[7rem] max-h-[6rem] min-h-[6rem] "
@@ -59,9 +62,7 @@ const ProductTableMobile = () => {
               {row.data.label}
             </p>
             <div className="flex justify-between items-center p-1">
-              <p className="w-full font- text-lg ">
-                ${row.data.price}
-              </p>
+              <p className="w-full font- text-lg ">${row.data.price}</p>
               <div className="flex justify-between items-center gap-1 text-sm ">
                 <p className="text-gray-500 font-semibold">Qty</p>
                 <span className="">{row.data.qty}</span>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ProductDetailsError = () => {
   return (
-    <div className="flex flex-col items-center justify-center  ">
+    <div className="flex flex-col items-center justify-center h-max mt-[4rem]">
       <div className="bg-white/50 px-6 rounded-lg shadow-md">
         <p className="text-center text-lg">
           The page you are looking for may have been removed.
