@@ -110,7 +110,7 @@ const ProductDetails = () => {
       style={{ "--bg-color": `${backgroundColor}` }}
       className={` ${
         typeof productInView.categoryData === "undefined" ? "h-full" : "h-max"
-      }  flex flex-col justify-between pt-[3rem] items-center w-full bg-center   bg-gradient-to-l from-gray-300 bg-[var(--bg-color)] to-[75%]  h-full  min-h-screen  duration-[1s]  transition-all "`}
+      }  flex flex-col justify-between pt-[3rem] items-center w-full bg-center   bg-gradient-to-l from-gray-300 bg-[var(--bg-color)] to-[75%]  h-full flex-grow   duration-[1s]  transition-all "`}
     >
       <div className="md:px-[10%] xl:px-[20%] pb-[2rem] items-start w-full flex  border-green-400  ">
         {" "}

@@ -31,7 +31,7 @@ const Root = () => {
       {/* {root} */}
       <div
         ref={outletRef}
-        className=" min-h-screen relative md:pb-[21rem] pb-[2rem]  flex flex-col w-full pt-[4rem]  border-red-500 bg-secondary"
+        className=" min-h-screen relative   flex flex-col w-full pt-[4rem]  border-red-500 bg-secondary"
       >
         <Outlet />
         <Footer />
