@@ -13,11 +13,11 @@ import InternetConnectionStatus from "../../components/InternetConnectionStatus 
 
 const Root = () => {
   useRefreshData();
-  //const { root } = useLoaderData();
+
   const { isVisible } = useSelector((state) => state.app);
   const outletRef = useRef();
   useScrollToTopOnNavigation(outletRef);
-  console.log("outletRef", outletRef);
+
   return (
     <div className="bg-primary h-screen overflow-y-auto  w-full text-black  border-black carousel">
       {isVisible && <Modal />}

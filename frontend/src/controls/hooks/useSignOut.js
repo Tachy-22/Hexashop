@@ -3,6 +3,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../../firebase-config";
 import { initiateCurrentUser } from "../../react-redux/appSlice";
 import { useDispatch } from "react-redux";
+import { cookies } from "../../cookies-config";
 auth;
 
 const useSignOut = () => {
@@ -12,6 +13,7 @@ const useSignOut = () => {
     try {
       {
         const signingOut = () => {
+          cookies.remove("auth-token");
           sessionStorage.removeItem("user");
           sessionStorage.removeItem("userAccessToken");
           dispatch(initiateCurrentUser(null));

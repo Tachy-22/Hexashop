@@ -42,6 +42,12 @@ import {
   kidsJacketsPath,
   kidsShoesPath,
   productDetailsPath,
+  accessoriesPath,
+  accessoriesHatsPath,
+  accessoriesBagsPath,
+  accessoriesJewelryPath,
+  accessoriesScarvesPath,
+  accessoriesSunglassesPath,
 } from "./paths";
 import AllWomen from "../pages/women's/components/AllWomen";
 import WomenSkirts from "../pages/women's/components/WomenSkirts";
@@ -57,6 +63,7 @@ import KidsJackets from "../pages/kid's/components/KidsJackets";
 import KidsShoes from "../pages/kid's/components/KidsShoes";
 import ProductDetails from "../components/ProductDetails";
 import ProductDetailsError from "../pages/error/ProductDetailsError";
+import Accesories from "../pages/accesories/Accesories";
 
 const routes = [
   {
@@ -212,6 +219,51 @@ const routes = [
 
           {
             path: kidsShoesPath,
+            element: <KidsShoes />,
+            //loader: contactLoader,
+            errorElement: <Error />,
+          },
+        ],
+      },
+      {
+        path: accessoriesPath,
+        element: <Accesories />,
+        //loader: contactLoader,
+        errorElement: <Error />,
+        children: [
+          {
+            path: accessoriesPath,
+            element: <AllKids />,
+            //loader: contactLoader,
+            errorElement: <Error />,
+          },
+          {
+            path: accessoriesHatsPath,
+            element: <KidsTops />,
+            //loader: contactLoader,
+            errorElement: <Error />,
+          },
+          {
+            path: accessoriesBagsPath,
+            element: <KidsBottoms />,
+            //loader: contactLoader,
+            errorElement: <Error />,
+          },
+          {
+            path: accessoriesJewelryPath,
+            element: <KidsDresses />,
+            //loader: contactLoader,
+            errorElement: <Error />,
+          },
+          {
+            path: accessoriesScarvesPath,
+            element: <KidsJackets />,
+            //loader: contactLoader,
+            errorElement: <Error />,
+          },
+
+          {
+            path: accessoriesSunglassesPath,
             element: <KidsShoes />,
             //loader: contactLoader,
             errorElement: <Error />,

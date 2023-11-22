@@ -114,7 +114,7 @@ const ProductDetails = () => {
         typeof productInView.categoryData === "undefined" ? "h-full" : "h-max"
       }  flex flex-col justify-center pt-[3rem] items-center w-full bg-center   bg-gradient-to-l from-gray-300 bg-[var(--bg-color)] to-[75%]  h-full   duration-[1s]  transition-all "`}
     >
-      <div className="md:px-[10%] xl:px-[20%] pb-[2rem] items-start w-full flex  border-green-400  h-[75vh]">
+      <div className="md:px-[10%] xl:px-[20%] pb-[2rem] items-start w-full flex  border-green-400  xl:h-[75vh] ">
         {" "}
         <div
           className={`" flex flex-col h-full  w-full border-t p-6 justify-between items-center     shadow-2xl drop-shadow-2xl from-black/20  rounded-md gap-[2rem] h-full"`}
@@ -128,7 +128,7 @@ const ProductDetails = () => {
             style={{
               "--image-url": `url(${localImageUrl})`,
             }}
-            className={` bg-[image:var(--image-url)] flex-grow cursor-pointer  rounded-m bg-cover xl:w-[30rem] md:w-[20rem]  tansition-all duration-[3s]  xl:h-[45rem] md:h-[25rem] h-[20rem] w-full  flex justify-start items-start bg-no-repeat  bg-center rounded-md transition-all  border-red-400   `}
+            className={` bg-[image:var(--image-url)] flex-grow cursor-pointer  rounded-m bg-cover  lg:w-[25rem]  tansition-all duration-[3s]  xl:h-[40rem] lg:h-[30rem] h-[15rem] w-[15rem]  flex justify-start items-start bg-no-repeat  bg-center  rounded-md transition-all  border-red-400   `}
           ></picture>
 
           <div className="flex h-fit   w-full  border-red-500  ">
@@ -137,7 +137,7 @@ const ProductDetails = () => {
                 style={{
                   color: contrastColor,
                 }}
-                className=" flex   w-fit  border-green-400 md:text-3xl font-bold duration-[1s] transition-all uppercase text-center "
+                className=" flex   w-fit  border-green-400 lg:text-3xl sm:text-2xl text-xl font-bold duration-[1s] transition-all uppercase text-center "
               >
                 {product.label}
               </h2>

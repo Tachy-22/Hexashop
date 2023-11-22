@@ -6,7 +6,7 @@ import Trousers from "./Trousers";
 
 const All = () => {
   return (
-    <div className="fle flex-col">
+    <div className="flex flex-col">
       <Shoes />
       <Jeans />
       <Trousers />

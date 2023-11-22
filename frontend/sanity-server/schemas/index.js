@@ -1,3 +1,7 @@
+import accessories from './accesories'
 import home from './home'
+import kids from './kids'
 import men from './men'
-export const schemaTypes = [men, home]
+import women from './women'
+
+export const schemaTypes = [men, kids, women, home, accessories]

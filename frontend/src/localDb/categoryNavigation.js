@@ -41,21 +41,10 @@ export const womenNavCategoryData = {
       path: "/women's/dresses",
       type: "dresses",
     },
-    {
-      path: "/women's/tops",
-      type: "tops",
-    },
+
     {
       path: "/women's/skirts",
       type: "skirts",
-    },
-    {
-      path: "/women's/jackets",
-      type: "jackets",
-    },
-    {
-      path: "/women's/jeans",
-      type: "jeans",
     },
     {
       path: "/women's/shoes",

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import { BsCart } from "react-icons/bs";
 import { cartPath } from "../routing/paths";
-
 /* eslint-disable react/prop-types */
 const NavMobile = ({
   showMobileNav,

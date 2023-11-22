@@ -6,7 +6,7 @@ import { client } from "../../sanity-config";
 import Loader from "./Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { setOnlineStatus } from "../react-redux/appSlice";
-const CategoryProductDisplay = ({ searchValue }) => {
+const CategoryProductDisplay = ({ searchValue, type }) => {
   const dispatch = useDispatch();
   const [data, setData] = useState(null);
   const { isOnLine } = useSelector((state) => state.app);
@@ -14,7 +14,9 @@ const CategoryProductDisplay = ({ searchValue }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await client.fetch(`*[_type=="men"]{document,categories}`);
+        const res = await client.fetch(
+          `*[_type=="${type}"]{document,categories}`
+        );
         const searchKey = "document";
 
         const result = res.find((item) => item[searchKey] === searchValue);
@@ -24,10 +26,10 @@ const CategoryProductDisplay = ({ searchValue }) => {
         } else {
           console.log("Not found");
         }
-         dispatch(setOnlineStatus(true));
+        dispatch(setOnlineStatus(true));
       } catch (error) {
         console.error("fetch failed", error);
-        dispatch(setOnlineStatus(false))
+        dispatch(setOnlineStatus(false));
       }
     }
     fetchData();

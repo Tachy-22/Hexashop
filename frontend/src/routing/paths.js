@@ -1,11 +1,12 @@
 export const homePath = "/";
 export const mensPath = "/men's/";
+
 export const womensPath = "/women's/";
 export const kidsPath = "/kid's/";
 export const cartPath = "/cart";
 export const productDetailsPath = "/product/:productId";
 
-export const accessoriesPath = "/accessories";
+export const accessoriesPath = "/accessories/";
 export const aboutUsPath = "/about us";
 export const contactUsPath = "/contact us";
 
