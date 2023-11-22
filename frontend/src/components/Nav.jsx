@@ -82,7 +82,7 @@ const Nav = () => {
   }, [setIsSigningOut]);
 
   return (
-    <div className="absolute top-0 z-10 left-0 flex w-full justify-between items-center bg- backdrop-blur-3xl bg-secondary/50 py-2 border-b xl:px-[2rem] px-2">
+    <div className="absolute top-0 z-10 left-0 flex w-full justify-between items-center bg- backdrop-blur-3xl bg-secondary/50 py-2 border-b xl:px-[2rem] sm:px-[1.5rem] px-2">
       <Link to="/" className="" id="logo">
         <img src={Logo} alt="" className="md:w-full w-[10rem]" />
       </Link>
