@@ -18,7 +18,7 @@ const FooterData = [
 
 const Footer = () => {
   return (
-    <footer className="bg-dark flex flex-col text-white w-full absolute bottom-0">
+    <footer className="bg-dark flex flex-col text-white w-full -0">
       <div className=" flex justify-between items-center">
         <>
           <div className="md:hidden flex justify-center">
