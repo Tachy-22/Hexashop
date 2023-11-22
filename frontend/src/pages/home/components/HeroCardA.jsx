@@ -9,7 +9,7 @@ const HeroCardA = ({ image }) => {
   return (
     <div
       style={{ "--image-url": `url(${imgUrl})` }}
-      className="bg-[image:var(--image-url)]  rounded bg-cover h-full  flex justify-center items-center text-white bg-no-repeat bg-center duration-[3s] hover:bg-left-bottom   transition-all cursor-pointer "
+      className="bg-[image:var(--image-url)]  rounded bg-cover h-full  flex justify-center items-center text-white bg-no-repeat bg-center lg:duration-[3s] duration-[1s] lg:hover:bg-left-bottom   transition-all cursor-pointer "
     >
       <div className="flex flex-col md:gap-4 gap-2 justify-center items-center  h-full w-full backdrop-brightness-50">
         <div className=" capitalize md:text-5xl text-3xl text-blue-100 font-bold">
