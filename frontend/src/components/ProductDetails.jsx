@@ -41,8 +41,8 @@ const ProductDetails = () => {
     isItemInCart(myCart, product) ? setIsInCart(true) : setIsInCart(false);
   }, [myCart, product]);
 
-  const [localImageUrl, setLocalImageUrl] = useState("");
-  const [backgroundColor, setBackgroundColor] = useState("rgb(0,0,0)");
+  const [localImageUrl, setLocalImageUrl] = useState(imageUrl);
+  const [backgroundColor, setBackgroundColor] = useState("rgb(128,128,128)");
 
   const imageRef = useRef(null);
 
@@ -105,16 +105,14 @@ const ProductDetails = () => {
 
   const contrastColor = getContrastColor(backgroundColor);
 
-
-
   return (
     <div
       style={{ "--bg-color": `${backgroundColor}` }}
       className={` ${
         typeof productInView.categoryData === "undefined" ? "h-full" : "h-max"
-      }  flex flex-col justify-center pt-[3rem] items-center w-full bg-center   bg-gradient-to-l from-gray-300 bg-[var(--bg-color)] to-[75%]  h-full   duration-[1s]  transition-all "`}
+      }  flex flex-col justify-between pt-[3rem] items-center w-full bg-center   bg-gradient-to-l from-gray-300 bg-[var(--bg-color)] to-[75%]  h-full    duration-[1s]  transition-all "`}
     >
-      <div className="md:px-[10%] xl:px-[20%] pb-[2rem] items-start w-full flex  border-green-400  xl:h-[75vh] ">
+      <div className="md:px-[10%] xl:px-[20%] pb-[2rem] items-start w-full flex  border-green-400  ">
         {" "}
         <div
           className={`" flex flex-col h-full  w-full border-t p-6 justify-between items-center     shadow-2xl drop-shadow-2xl from-black/20  rounded-md gap-[2rem] h-full"`}

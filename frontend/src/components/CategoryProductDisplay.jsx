@@ -33,7 +33,7 @@ const CategoryProductDisplay = ({ searchValue, type }) => {
       }
     }
     fetchData();
-  }, [dispatch, searchValue]);
+  }, [dispatch, searchValue, type]);
 
   console.log("isOnLine :", isOnLine);
 

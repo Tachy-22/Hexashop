@@ -64,7 +64,7 @@ const ProductCard = ({ product, style, categoryData }) => {
 
   return (
     <div
-      className={`" flex flex-grow flex-col justify-center xl:h-[25rem] md:h-[20rem] sm:h-[18rem] h-[15rem]   ${style} "`}
+      className={`" flex flex-grow flex-col justify-center xl:h-[25rem] md:h-[20rem] sm:h-[18rem]  h-[15rem]   ${style} "`}
     >
       {imageUrl ? (
         <div
