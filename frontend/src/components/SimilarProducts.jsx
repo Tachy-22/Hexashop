@@ -6,7 +6,7 @@ const SimilarProducts = ({ categoryData, contrastColor }) => {
     <>
       {categoryData && (
         <div className=" flex flex-col  border-red-500 w-[95%] carousel h-max">
-          <h3 className=" flex w-fit relative capitalize md:text-3xl text-xl font-semibold  md:my-[3rem] md:py-3  my-4">
+          <h3 className=" flex w-fit relative capitalize md:text-3xl text-xl font-semibold  md:my-[rem] md:py-3  my-4">
             <p
               style={{
                 color: contrastColor,

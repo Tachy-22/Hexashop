@@ -20,7 +20,7 @@ const Root = () => {
   useScrollToTopOnNavigation(outletRef);
 
   return (
-    <div className="bg-primary h-screen overflow-y-auto  w-full text-black  border-black ">
+    <div className="bg-primary h-screen overflow-y-auto  w-full text-black carousel border-black ">
       {isVisible && (
         <Modal>
           <SignIn />
@@ -31,7 +31,7 @@ const Root = () => {
       {/* {root} */}
       <div
         ref={outletRef}
-        className=" min-h-screen relative md:pb-[21rem] flex flex-col w-full pt-[4rem]  border-red-500 bg-secondary"
+        className=" min-h-screen relative md:pb-[21rem] pb-[2rem]  flex flex-col w-full pt-[4rem]  border-red-500 bg-secondary"
       >
         <Outlet />
         <Footer />
