@@ -18,13 +18,13 @@ const FooterData = [
 
 const Footer = () => {
   return (
-    <footer className="bg-dark flex flex-col text-white">
+    <footer className="bg-dark flex flex-col text-white w-full">
       <div className=" flex justify-between items-center">
         <>
-          <div className="lg:hidden flex justify-center">
+          <div className="md:hidden flex justify-center">
             {/* <Mobile /> */}
           </div>
-          <div className="hidden lg:flex w-full  justify-between gap-[4rem] px-[15rem] py-10">
+          <div className="hidden md:flex w-full  justify-between xl:gap-[4rem] xl:px-[15rem] py-10">
             <div className="flex flex-col justify-between w-max gap-[1rem] px-6">
               <div className="bg-white/90 w-fit p-2 rounded-md" id="logo">
                 <img src={Logo} alt="" className="" />
@@ -43,7 +43,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex justify-between flex-grow  w-fit gap-[1rem]  ">
+            <div className="flex justify-between flex-grow  w-fit gap-[1rem] px-4  ">
               {FooterData.map((section, index) => {
                 return (
                   <div key={index} className=" w-fit">

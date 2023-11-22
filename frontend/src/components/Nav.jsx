@@ -20,11 +20,7 @@ import {
   womensPath,
 } from "../routing/paths";
 import { FaHome, FaChild } from "react-icons/fa";
-import {
-
-  MdPhoneCallback,
-  MdInfoOutline,
-} from "react-icons/md";
+import { MdPhoneCallback, MdInfoOutline } from "react-icons/md";
 import { AiOutlineMan, AiOutlineWoman } from "react-icons/ai";
 import { GiBigDiamondRing } from "react-icons/gi";
 
@@ -146,11 +142,22 @@ const Nav = () => {
           onClick={handleShowMobileNav}
           className="text-2xl  hover:border border-gray-400"
         />
+        {!logedInUser && (
+          <Link
+            onClick={handleSignInPopUp}
+            to="/"
+            className="border-0 border-gray-500 rounded-md p-1 px-2 animate-blink-blue-pink hover:border-blue-500 hover:bg-blue-500 hover:text-white bg-black/90 text-white text-[0.7rem]"
+          >
+            Sign In
+          </Link>
+        )}
       </div>
       <NavMobile
         showMobileNav={showMobileNav}
         setShowMobileNav={setShowMobileNav}
         navKeys={navKeys}
+        handleSignOut={handleSignOut}
+        logedInUser={logedInUser}
       />
     </div>
   );

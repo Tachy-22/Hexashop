@@ -13,7 +13,7 @@ const Profile = () => {
           <img
             src={logedInUser.photoURL}
             alt="User Profile"
-            className="rounded-full h-14 w-14 "
+            className="rounded-full md:h-14 md:w-14 h-10"
           />
         )}
        

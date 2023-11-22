@@ -41,6 +41,7 @@ import {
   kidsDressesPath,
   kidsJacketsPath,
   kidsShoesPath,
+  productDetailsPath,
 } from "./paths";
 import AllWomen from "../pages/women's/components/AllWomen";
 import WomenSkirts from "../pages/women's/components/WomenSkirts";
@@ -55,6 +56,7 @@ import KidsDresses from "../pages/kid's/components/KidsDresses";
 import KidsJackets from "../pages/kid's/components/KidsJackets";
 import KidsShoes from "../pages/kid's/components/KidsShoes";
 import ProductDetails from "../components/ProductDetails";
+import ProductDetailsError from "../pages/error/ProductDetailsError";
 
 const routes = [
   {
@@ -235,10 +237,10 @@ const routes = [
         errorElement: <Error />,
       },
       {
-        path: "/product/:productId",
+        path: productDetailsPath,
         element: <ProductDetails />,
 
-        errorElement: <Error />,
+        errorElement: <ProductDetailsError />,
       },
     ],
   },

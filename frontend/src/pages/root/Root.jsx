@@ -19,14 +19,14 @@ const Root = () => {
   useScrollToTopOnNavigation(outletRef);
   console.log("outletRef", outletRef);
   return (
-    <div className="bg-primary  w-full text-black  border-black carousel">
+    <div className="bg-primary h-screen overflow-y-auto  w-full text-black  border-black carousel">
       {isVisible && <Modal />}
       {<InternetConnectionStatus />}
       <Nav />
       {/* {root} */}
       <div
         ref={outletRef}
-        className="h-screen overflow-y-auto carousel  flex flex-col w-full -4  border-red-500"
+        className=" min-h-screen flex flex-col w-full -4  border-red-500"
       >
         <Outlet />
         <Footer />

@@ -11,7 +11,7 @@ const SimilarProducts = ({ categoryData, contrastColor }) => {
               style={{
                 color: contrastColor,
               }}
-              className="z-40 duration-[1s]  transition-all"
+              className=" duration-[1s]  transition-all"
             >
               {" "}
               Similar Products
@@ -27,7 +27,7 @@ const SimilarProducts = ({ categoryData, contrastColor }) => {
                   <ProductCard
                     key={index}
                     product={product}
-                    style={`w-[20rem]`}
+                    style={`md:w-[20rem] w-[15rem]`}
                     categoryData={categoryData}
                   />
                 );

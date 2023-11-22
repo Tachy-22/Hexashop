@@ -105,12 +105,14 @@ const ProductDetails = () => {
 
   const contrastColor = getContrastColor(backgroundColor);
 
+
+
   return (
     <div
       style={{ "--bg-color": `${backgroundColor}` }}
       className={` ${
         typeof productInView.categoryData === "undefined" ? "h-full" : "h-max"
-      }  flex flex-col justify-center pt-[3rem] items-center w-full bg-center bg-gray-300  bg-gradient-to-l from-gray-300 bg-[var(--bg-color)] to-[75%]     duration-[1s]  transition-all "`}
+      }  flex flex-col justify-center pt-[3rem] items-center w-full bg-center   bg-gradient-to-l from-gray-300 bg-[var(--bg-color)] to-[75%]  h-full   duration-[1s]  transition-all "`}
     >
       <div className="md:px-[10%] xl:px-[20%] pb-[2rem] items-start w-full flex  border-green-400  h-[75vh]">
         {" "}

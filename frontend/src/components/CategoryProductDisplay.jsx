@@ -37,7 +37,7 @@ const CategoryProductDisplay = ({ searchValue }) => {
 
   return (
     <Suspense fallback={<div>Loading</div>}>
-      <div className="  flex flex-col md:gap-[3.5rem] gap-4 w-full border-red-500 justify-center">
+      <div className="  flex flex-col md:gap-[3.5rem] gap-4 w-full  border-red-500 justify-center">
         {" "}
         {data &&
           data.map((category, index) => {

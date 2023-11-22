@@ -25,7 +25,7 @@ const SignIn = () => {
 
   return (
     !isLoggingIn && (
-      <div className="w-[30rem] h-[38rem] relative rounded-md bg-white flex flex-col gap-4 items-center px-[4rem] py-[2rem]">
+      <div className="w-[30rem] h-[38rem] relative rounded-md bg-white flex flex-col gap-4 items-center md:px-[4rem] px-[2rem] py-[2rem]">
         <AiOutlineCloseSquare
           onClick={handleCloseModal}
           className="text-black/70 absolute right-0 top-0 m-4 text-2xl hover:border"
@@ -40,12 +40,12 @@ const SignIn = () => {
             className="p-3 border-2 rounded-md shadow-xl scale-[120%]"
           />
         </div>
-        <p className=" text-gray-800  pb-2">
+        <p className=" text-gray-800  pb-2 text-center">
           Where Style Meets Elegance in Every Thread.
         </p>
         <div
           onClick={handleSignIn}
-          className=" border border-black/50 rounded-md px-3 py-2 w-full flex justify-center items-center gap-2 hover:text-white hover:bg-black hover:border-white transition-colors duration-1000"
+          className=" border cursor-pointer border-black/50 rounded-md px-3 py-2 w-full flex justify-center items-center gap-2 hover:text-white hover:bg-black hover:border-white transition-colors duration-1000"
         >
           <FcGoogle className="text-2xl " />
           <p className=""> Continue with Google</p>
